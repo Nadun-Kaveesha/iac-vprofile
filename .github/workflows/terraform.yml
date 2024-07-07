@@ -2,8 +2,7 @@ name: "Vprofile IAC"
 on:
   push:
     branches:
-      - main
-      - stage
+      - '*'
     paths:
       - terraform/**
   pull_request:
@@ -59,4 +58,4 @@ jobs:
       - name: Terraform plan status
         if: steps.plan.outcome == 'failure'
         run: exit 1
-        
+
